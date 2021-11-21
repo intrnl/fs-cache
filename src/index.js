@@ -109,7 +109,6 @@ export class FSCache {
 // Basic atomic file writer
 function fileWriter () {
 	const updates = new Map();
-	const tempDir = os.tmpdir();
 
 	async function apply (filename, content) {
 		const update = { content: undefined };
@@ -119,12 +118,13 @@ function fileWriter () {
 			await fs.unlink(filename);
 		}
 		else {
-			const tempPath = path.join(tempDir, 'file' + Math.random().toString(16).slice(2));
+			const dirname = path.dirname(filename);
+			const temp = path.join(dirname, 'file' + Math.random().toString(16).slice(2));
 
-			await fs.mkdir(path.dirname(filename), { recursive: true });
+			await fs.mkdir(dirname, { recursive: true });
 
-			await fs.writeFile(tempPath, content);
-			await fs.rename(tempPath, filename);
+			await fs.writeFile(temp, content);
+			await fs.rename(temp, filename);
 		}
 
 		updates.delete(filename);
