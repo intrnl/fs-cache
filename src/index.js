@@ -141,7 +141,7 @@ function fileWriter () {
 			update.content = content;
 		}
 		else {
-			apply(target, content);
+			apply(filename, content);
 		}
 	};
 }
