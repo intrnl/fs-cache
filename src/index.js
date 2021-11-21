@@ -77,7 +77,7 @@ export class FSCache {
 	}
 
 	async #write (filename, key, loader) {
-		const { ...data, dependencies = [] } = await loader();
+		const { dependencies = [], ...data } = await loader();
 
 		const map = {};
 		dependencies.unshift(filename);
