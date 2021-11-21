@@ -34,7 +34,7 @@ const result = await cache.get(filename, key, async () => {
   const css = await transformer.process(source, { from: filename });
 
   // Collect dependencies.
-  const dependencies = [filename];
+  const dependencies = [];
 
   for (const message of result.messages) {
     if (message.type === 'dependency') {
