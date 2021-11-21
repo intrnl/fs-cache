@@ -1,4 +1,4 @@
-export function getProjectRoot (name?: string, cwd?: string): { baseDir: string, cacheDir: string };
+export function getProjectRoot (name?: string, cwd?: string): Promise<{ baseDir: string, cacheDir: string }>;
 
 export class FSCache {
 	constructor (options: FSCacheOptions);
