@@ -6,7 +6,7 @@ import escalade from 'escalade';
 import { hash } from '@intrnl/xxhash64';
 
 
-export function getProjectRoot (name = 'cache', cwd = path.resolve()) {
+export async function getProjectRoot (name = 'cache', cwd = path.resolve()) {
 	const pkg = 'package.json';
 
 	const root = await escalade(cwd, (_, names) => {
