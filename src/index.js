@@ -77,7 +77,7 @@ export class FSCache {
 	}
 
 	async #write (filename, key, loader) {
-		const { dependencies = [], ...data } = await loader();
+		const { ...data, dependencies = [] } = await loader();
 
 		const map = {};
 		dependencies.unshift(filename);
@@ -93,7 +93,7 @@ export class FSCache {
 		const metadata = { ...data, dependencies: map };
 
 		writer(cachePath, JSON.stringify(metadata));
-		return metadata;
+		return { ...data, dependencies };
 	}
 
 	#getCachePath (filename, key = []) {
