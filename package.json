@@ -2,10 +2,12 @@
 	"type": "module",
 	"name": "@intrnl/fs-cache",
 	"description": "Filesystem cache",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"author": "intrnl",
 	"license": "MIT",
-	"repository": "https://github.com/intrnl/fs-cache",
+	"repository": {
+		"url": "https://github.com/intrnl/fs-cache"
+	},
 	"files": ["src/"],
 	"main": "src/index.js",
 	"dependencies": {
