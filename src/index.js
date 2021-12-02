@@ -2,7 +2,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import escalade from 'escalade';
 
-import objectHash from 'stable-hash';
+import _objectHash from 'stable-hash';
 import { hash } from '@intrnl/xxhash64';
 
 
@@ -22,6 +22,7 @@ export async function getProjectRoot (name = 'cache', cwd = path.resolve()) {
 
 const VERSION = 1;
 
+const objectHash = _objectHash.default || _objectHash;
 const writer = fileWriter();
 
 export class FSCache {
