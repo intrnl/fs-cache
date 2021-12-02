@@ -2,7 +2,7 @@
 	"type": "module",
 	"name": "@intrnl/fs-cache",
 	"description": "Filesystem cache",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"author": "intrnl",
 	"license": "MIT",
 	"repository": {

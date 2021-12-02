@@ -81,7 +81,10 @@ export class FSCache {
 		const { dependencies = [], ...data } = await loader();
 
 		const map = {};
-		dependencies.unshift(filename);
+
+		if (!dependencies.includes(filename)) {
+			dependencies.unshift(filename);
+		}
 
 		for (const dep of dependencies) {
 			const rel = path.relative(this.#baseDir, dep);
