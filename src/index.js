@@ -1,8 +1,8 @@
 import * as fs from 'fs/promises';
 import * as path from 'path';
-import * as os from 'os';
 import escalade from 'escalade';
 
+import objectHash from 'stable-hash';
 import { hash } from '@intrnl/xxhash64';
 
 
@@ -99,7 +99,7 @@ export class FSCache {
 	#getCachePath (filename, key = []) {
 		const rel = filename = path.relative(this.#baseDir, filename);
 
-		const hashKey = hash(JSON.stringify([rel, ...key]), VERSION).toString(16);
+		const hashKey = hash(objectHash([rel, ...key]), VERSION).toString(16);
 		const cachePath = path.join(this.#cacheDir, hashKey.slice(0, 2), hashKey.slice(2));
 
 		return cachePath;

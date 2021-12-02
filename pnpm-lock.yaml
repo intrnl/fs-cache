@@ -3,10 +3,12 @@ lockfileVersion: 5.3
 specifiers:
   '@intrnl/xxhash64': ^0.1.0
   escalade: ^3.1.1
+  stable-hash: ^0.0.2
 
 dependencies:
   '@intrnl/xxhash64': 0.1.0
   escalade: 3.1.1
+  stable-hash: 0.0.2
 
 packages:
 
@@ -17,4 +19,8 @@ packages:
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
+    dev: false
+
+  /stable-hash/0.0.2:
+    resolution: {integrity: sha512-tPwQ3c1rLIwbJpq59duoznegEbmgfV630C2n4R4G96LKBFljgK8j+O9AxjqB6cAzu4gE7s4pByrLWtZel8E+Mg==}
     dev: false
