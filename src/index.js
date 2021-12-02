@@ -20,7 +20,7 @@ export async function getProjectRoot (name = 'cache', cwd = path.resolve()) {
 }
 
 
-const VERSION = 0;
+const VERSION = 1;
 
 const writer = fileWriter();
 
